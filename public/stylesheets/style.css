@@ -9,6 +9,11 @@
     display: inline;
 }
 
+#title {
+    font-size: 1.2em;
+    background-color: #B6B6B6;
+}
+
 td {
   padding: 10px;
 }
