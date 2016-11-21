@@ -18,9 +18,15 @@ block content
     table
       - for (var inx = 0; inx < results.length; inx++)
         tr
-          td=results[inx].name+" "
+          td=results[inx].name
           td &nbsp;
-          td=results[inx].country
-  // Put a click button that lets us return to the index page 
+          td=results[inx].origin_country
+          td &nbsp;
+          td=results[inx].sport
+          td &nbsp;
+          td=results[inx].banned_substance
+          td &nbsp;
+          td=results[inx].year
+  // Put a click button that lets us return to the index page
   form(method='get', action='/')
       input(type='submit', value='Return')

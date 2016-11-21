@@ -8,13 +8,13 @@ var connection = mysql.createConnection({
 });
 
 /////
-// Query the oracle database, and call output_actors on the results
+// Query the mysql database, and return all atheltes from the country entered
 //
 // res = HTTP result object sent back to the client
-// name = Name to query for
+// country = origin country of athletes to query for
 function query_db(res, country) {
 	query = "SELECT * FROM doping_athletes";
-	if (country) query = query + " WHERE country='" + country + "'";
+	if (country) query = query + " WHERE origin_country='" + country + "'";
 	connection.query(query, function(err, rows, fields) {
 		if (err) console.log(err);
 		else {
@@ -37,7 +37,7 @@ function output_persons(res,country,results) {
 }
 
 /////
-// This is what's called by the main app 
+// This is what's called by the main app
 exports.do_work = function(req, res){
 	query_db(res,req.query.name);
 };
