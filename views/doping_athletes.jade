@@ -2,9 +2,8 @@
 // Inherits from layout
 extend layout
 block navbarcontent
-    +nav_item("/","active") Sample Work
-    +nav_item("/") Your Work
-    +nav_item("/reference") Reference
+    +nav_item("/","active") Home
+    +nav_item("/doping_athletes?name=") Doping Athletes
 block content
   p
     +icon-primary("search")
@@ -12,10 +11,17 @@ block content
   // Create a table with one row per result
   form(method="get", action="/doping_athletes")
   p
-    select(name = "name")
-      - for (var inx = 0; inx < results.length; inx++)
-        option #{results[inx].name}
     table
+      tr
+        td Name
+        td &nbsp;
+        td Origin Country
+        td &nbsp;
+        td Sport
+        td &nbsp;
+        td Banned Substance Athlete Used
+        td &nbsp;
+        td Year
       - for (var inx = 0; inx < results.length; inx++)
         tr
           td=results[inx].name

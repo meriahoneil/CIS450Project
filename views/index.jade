@@ -3,9 +3,8 @@ extend layout
 // Then we produce a form that triggers /doping_athletes once
 // the user hits Submit
 block navbarcontent
-    +nav_item("/","active") Sample Work
-    +nav_item("/") Your Work
-    +nav_item("/reference") Reference
+    +nav_item("/","active") Home
+    +nav_item("/doping_athletes?name=") Doping Athletes
 block content
   p
     +icon-primary("search")
